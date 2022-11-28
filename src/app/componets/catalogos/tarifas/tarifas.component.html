@@ -1,0 +1,273 @@
+
+<div class="container">
+  <div class="card-body p-0">
+    <table class="table table-striped projects">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Monto</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let t of tarifas">
+        <tr class="disabled">
+          <th scope="row">{{t.Id_Tarifa}}</th>
+          <td>{{t.Descripcion}}</td>
+          <td>$ {{t.Monto}}</td>
+          <td class="project-state">
+            <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCenter1"><i class="fas fa-pencil-alt">
+            </i>Editar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="popupContent">
+        <div class="card card-warning">
+            <div class="card-header">
+              <h3 class="card-title">Editar Tarifa</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form role="form">
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Descripcion</label>
+                  <input type="name" class="form-control" id="exampleInputEmail1" 
+                  placeholder="Ingresar Nombre de Suscripcion" required value="{{tarifas[0].Descripcion}}">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Monto</label>
+                  <input type="tel" class="form-control" id="exampleInputPassword1" 
+                  placeholder="Pesos" required pattern="[0-9]{10}" value="{{tarifas[0].Monto}}">
+                </div>
+                  <div class="input-group mb-3">
+                    <div class="form-group">
+                      <div class="custom-control custom-switch custom-switch-on-success">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                        <label class="custom-control-label" for="customSwitch1">Desactivar</label>
+                      </div>
+                    </div>
+                    </div>
+              </div>
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+
+              
+              </div>
+             
+            </form>
+          </div>
+    </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="popupContent">
+        <div class="card card-warning">
+            <div class="card-header">
+              <h3 class="card-title">Agregar Tarifa</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form role="form">
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Descripcion</label>
+                  <input type="name" class="form-control" id="exampleInputEmail1" 
+                  placeholder="Ingresar Nombre de Suscripcion" required>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Monto</label>
+                  <input type="tel" class="form-control" id="exampleInputPassword1" 
+                  placeholder="Pesos" required pattern="[0-9]{10}">
+                </div>
+                  <div class="input-group mb-3">
+                      
+                    </div>
+              </div>
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+
+              
+              </div>
+             
+            </form>
+          </div>
+    </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="card card-warning">
+        <div class="card-header">
+          <h3 class="card-title">Agregar Tarifa</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+        </div>
+            <form role="form">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Nombre</label>
+              <input type="text" class="form-control" id="inputEmail4" placeholder="Nombre(s)">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Apellido Paterno</label>
+              <input type="text" class="form-control" id="inputPassword4" placeholder="Apellido Paterno">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Apellido Materno</label>
+              <input type="text" class="form-control" id="inputEmail4" placeholder="Apellido Materno">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Telefono</label>
+              <input type="text" class="form-control" id="inputPassword4" placeholder="Telefono">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="inputCity">Suscripcion</label>
+              <select id="inputState" class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputState">Fecha inicio</label>
+              <div class="form-group">
+                  <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                      <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                      <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                          <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputZip">Fecha fin</label>
+              <div class="form-group">
+                <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                    <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                    <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="form-group col-6">
+            <label for="exampleFormControlFile1">Subir foto</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" (onClick)="!modal">
+            <div class="col-md-5 text-center" *ngIf="modal">
+              <img src="assets/c1.jpg" alt="" class="img-circle img-fluid">
+            </div>
+          </div>
+          
+          
+          </div>
+          
+          <div class="row">
+            <div class="col-8">
+            </div>
+            
+              <div class="col-md-3">
+                <button  class="btn btn-primary btn-block">Guardar</button>
+              </div>
+            
+          </div>
+            </form>
+            
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<section class="content" *ngIf = "modal">
+  <div class="card card-solid" >
+    <div class="card-body pb-0">
+      <div class="row d-flex align-items-stretch" >
+        <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch"  >
+            <div class="card bg-light" >
+            <div class="card-header text-muted border-bottom-0"  >
+            </div>
+            <div class="card-body pt-0" >
+              <div class="row" >
+                <div class="ribbon-wrapper">
+                  <div class="ribbon bg" >
+                  </div>
+                </div>
+                <div class="col-7">
+                  <h2 class="lead"><b></b></h2>
+                  <ul class="ml-4 mb-0 fa-ul text-muted">
+                    <br>
+                    <li class="small"><span class="fa-li"><i class="fa fa-phone" aria-hidden="true"></i></span> </li>
+                    <br>
+                    <li class="small"><span class="fa-li"><i class="fa fa-book" aria-hidden="true"></i></span> Suscripcion:  </li>
+                    <br>
+                    <li class="small"><span class="fa-li"><i class="fa fa-hourglass-end" aria-hidden="true"></i></span> Fin Suscripcion:  </li>
+                  </ul>
+                </div>
+                <div class="col-5 text-center">
+                  <img src="assets/c1.jpg" alt="" class="img-circle img-fluid">
+                </div>
+              </div>
+              <div class="col-12 text-right">
+                <a class="btn btn-info btn-sm" href="#">
+                  <i class="fas fa-pencil-alt">
+                  </i>
+                  Edit
+              </a>
+              </div>
+            </div>
+            <!--<div class="card-footer">
+              <div class="text-right">
+                <a href="#" class="btn btn-sm btn-primary">
+                  <i class="fas fa-pencil-alt"></i> Editar
+                </a>
+              </div>
+            </div>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- /.card-footer -->
+  </div>
+</section>
+<!--Boton para agregar-->
+        
+      
+        <div class="cajaf">
+          <a  class="btn_roundf" title="Imprimir" alt="impirmir" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-plus"></i></a>
+          <!--<button class="caja1" href="#" alt="contrato" title="Contrato" data-toggle="modal" data-target="#exampleModalCenter" ><i class="fa fa-flag"></i></button>
+          <a class="caja2" href="#" alt="comprobante" title="Comprobante"><i class="fa fa-print"></i></a>-->
+        </div>
+          <!--CBoton para agregar-->

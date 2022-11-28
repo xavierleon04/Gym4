@@ -1,0 +1,304 @@
+<div class="hold-transition  content-wrapper">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Empleados</h1>
+            <!--Boton para agregar-->
+        <!--
+            <button  type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#exampleModalCenter" >Agregar cliente nuevo</button>
+        -->
+        <div class="cajaf">
+          <a  class="btn_roundf" title="Imprimir" alt="impirmir" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-plus"></i></a>
+          
+        </div>
+          <!--CBoton para agregar-->
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr>
+    <section class="content">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Empleados</h3>
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+              <i class="fas fa-minus"></i></button>
+          </div>
+        </div>
+        <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="popupContent">
+          <div class="card card-warning">
+              <div class="card-header">
+                <h3 class="card-title">Agregar Empleado</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Nombre</label>
+                    <input type="name" class="form-control" id="exampleInputEmail1" 
+                    placeholder="Ingresar Nombre(s)" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Apellido Paterno</label>
+                    <input type="appellido" class="form-control" id="exampleInputPassword1" placeholder="Apellido Paterno">
+                  </div> 
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Apellido Materno</label>
+                    <input type="appellido" class="form-control" id="exampleInputPassword1" placeholder="Apellido Materno">
+                  </div> 
+                  <div class="form-group">
+                      <label for="exampleInputPassword1">Telefono</label>
+                      <input type="text" maxlength="10" minlength="10" pattern="{0-9}" class="form-control" id="exampleInputPassword1" placeholder="Telefono">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Puesto</label>
+                      <select class="form-control" id="exampleFormControlSelect1">
+                        <option selected>Seleccionar puesto</option>
+                          <option *ngFor="let p of puestos">{{p.Descripcion}}</option>
+                      </select>
+                    </div>
+                      <form>
+                        <div class="form-group">
+                          <label for="exampleFormControlFile1">Subir foto</label>
+                          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                      </form>
+                </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Guardar</button>
+  
+                
+                </div>
+               <!--<button type="button" class="btn btn-success toastrDefaultSuccess">
+                  Prueba de exito
+                </button>
+                <button type="button" class="btn btn-danger toastrDefaultError">
+                  Prueba de error
+                </button>-->
+              </form>
+            </div>
+      </div>
+        <!--<div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>-->
+      </div>
+    </div>
+  </div>
+        <div class="card-body p-0">
+          <table class="table table-striped projects">
+              <thead>
+                  <tr>
+                      <th style="width: 1%">
+                          #
+                      </th>
+                      <th style="width: 20%">
+                          Id Empleado
+                      </th>
+                      <th style="width: 30%">
+                         Nombre Empleado
+                      </th>
+                      <th>Puesto</th>
+                      <!--<th style="width: 8%" class="text-center">
+                          Status
+                      </th>-->
+                      <th style="width: 20%">
+                      </th>
+                  </tr>
+              </thead>
+              <tbody *ngFor ="let e of empleado">
+                  <tr>
+                      <td>
+                          #
+                      </td>
+                      <td>
+                          <a>{{e.Id_Empleado}}</a>
+                          <br/>
+                          
+                      </td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                  <img alt="Avatar" class="table-avatar" [src]="e.Img">
+                                <label>{{e.Nombre}} {{e.Apellido}}</label>    
+                          </ul>
+                      </td>
+                      <td >
+                          <label>{{e.Puesto}}</label>
+                          
+                      </td>
+                      <!--<td class="project-state">
+                          <span class="badge badge-success">Activo</span>
+                      </td>-->
+                      <td class="project-actions text-right">
+                          <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCenter1">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm" href="#">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </a>
+                      </td>
+                  </tr>
+                  <tr>
+                     
+                      
+                 
+              </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+
+  <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="popupContent">
+          <div class="card card-warning">
+              <div class="card-header">
+                <h3 class="card-title">Agregar Empleado</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Nombre</label>
+                    <input type="name" class="form-control" id="exampleInputEmail1" 
+                    placeholder="Ingresar Nombre(s)" required value="{{empleado[0].Nombre}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Apellido Paterno</label>
+                    <input type="appellido" class="form-control" id="exampleInputPassword1" placeholder="Apellido Paterno" value="{{empleado[0].Apellido}}">
+                  </div> 
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Apellido Materno</label>
+                    <input type="appellido" class="form-control" id="exampleInputPassword1" placeholder="Apellido Materno" value="Jimenez">
+                  </div> 
+
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Puesto</label>
+                      <select class="form-control" id="exampleFormControlSelect1">
+                        <option selected>Seleccionar puesto</option>
+                          <option selected>{{empleado[0].Puesto}}</option>
+                      </select>
+                    </div>
+                      <form>
+                        <div class="form-group">
+                          <label for="exampleFormControlFile1">Subir foto</label>
+                          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                      </form>
+                </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Guardar</button>
+  
+                
+                </div>
+              </form>
+            </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+<!--<section class="content">
+<div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Empleados</h3>
+
+      <div class="card-tools">
+        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+          <i class="fas fa-minus"></i></button>
+        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+          <i class="fas fa-times"></i></button>
+      </div>
+    </div>
+    <div class="card-body p-0">
+      <table class="table table-striped projects">
+          <thead>
+              <tr>
+                  <th style="width: 1%">
+                      #
+                  </th>
+                  <th style="width: 20%">
+                      Id Empleado
+                  </th>
+                  <th style="width: 30%">
+                     Nombre Empleado
+                  </th>
+                  <th>Puesto</th>
+                  <th style="width: 8%" class="text-center">
+                      Status
+                  </th>
+                  <th style="width: 20%">
+                  </th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>
+                      #
+                  </td>
+                  <td>
+                      <a>
+                          #01
+                      </a>
+                      <br/>
+                      
+                  </td>
+                  <td>
+                      <ul class="list-inline">
+                          <li class="list-inline-item">
+                              <img alt="Avatar" class="table-avatar" src="assets/empleados/avatar04.png">
+                            <label>Jorge Garcia Martinez</label>
+                      </ul>
+                  </td>
+                  <td >
+                    <label>Recepcionista</label>
+                  </td>
+                  <td class="project-state">
+                      <span class="badge badge-success">Activo</span>
+                  </td>
+                  <td class="project-actions text-right">
+                      <a class="btn btn-info btn-sm" href="#">
+                          <i class="fas fa-pencil-alt">
+                          </i>
+                          Edit
+                      </a>
+                      <a class="btn btn-danger btn-sm" href="#">
+                          <i class="fas fa-trash">
+                          </i>
+                          Delete
+                      </a>
+                  </td>
+              </tr>
+              <tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</section>-->
